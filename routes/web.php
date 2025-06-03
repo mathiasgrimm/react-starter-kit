@@ -13,5 +13,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
+Route::get('/test1', function () {
+    return [
+        'ip' => request()->ip(),
+        'ips' => request()->ips(),
+    ];
+});
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
